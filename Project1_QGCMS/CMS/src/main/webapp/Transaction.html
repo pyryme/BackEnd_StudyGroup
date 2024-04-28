@@ -21,8 +21,8 @@
     <label for="groupId_receiver">接收转账的群组ID:</label>
     <input type="text" id="groupId_receiver" v-model="groupIdReceiver"><br>
 
-    <label for="userId">转账对象的UserID:</label>
-    <input type="text" id="userId" v-model="userId"><br>
+<!--    <label for="userId">转账对象的UserID:</label>-->
+<!--    <input type="text" id="userId" v-model="userId"><br>-->
 
     <label for="amount">转账金额:</label>
     <input type="number" id="amount" v-model="amount" step="0.01" max="50000"><br>
@@ -42,16 +42,29 @@
       return {
         groupIdSender: '',
         groupIdReceiver: '',
-        userId: '',
+        // userId: '',
         amount: 0.00,
         description: ''
       };
     },
     methods: {
       submitTransaction() {
-        // 在这里实现提交订单的逻辑
-        // 可以使用this.groupIdSender, this.groupIdReceiver, this.userId, this.amount, this.description来获取输入的值
-        // 可以使用axios发送HTTP请求
+        const params = new URLSearchParams();
+        params.append("groupIdSender", this.groupIdSender);
+        params.append("groupIdReceiver", this.groupIdReceiver);
+        params.append("amount", this.amount.toString()); // 将double类型转换为字符串
+        params.append("description", this.description);
+
+
+
+        try {
+          const resp = axios.post("http://localhost:8080/CMS/Group/transfer", params);
+          alert('订单提交成功.');
+        //  这里把resp里面的信息打印出来
+        } catch (error) {
+          console.error('axios failed:', error);
+          alert('axios failed. Please try again.');
+        }
       }
     }
   });

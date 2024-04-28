@@ -3,9 +3,11 @@ package com.xxx.cms.controller;
 
 //import com.xxx.cms.model.Group;
 import com.alibaba.fastjson.JSON;
+import com.xxx.cms.bean.vo.AccountVO;
 import com.xxx.cms.bean.vo.AllMemberVO;
 import com.xxx.cms.bean.vo.GroupTransactionVO;
 import com.xxx.cms.bean.vo.GroupTransactionVO2;
+import com.xxx.cms.dao.impl.AllMemberDaoImpl;
 import com.xxx.cms.service.impl.AllMemberServiceImpl;
 import com.xxx.cms.service.impl.GroupServiceImpl;
 import com.xxx.cms.service.impl.TransactionServiceImpl;
@@ -25,6 +27,63 @@ public class TransactionServlet extends BaseServlet {
     private final GroupServiceImpl groupService = new GroupServiceImpl();
     private final AllMemberServiceImpl allMemberService = new AllMemberServiceImpl();
     private final TransactionServiceImpl transactionService= new TransactionServiceImpl();
+    private final AllMemberDaoImpl allMemberDao = new AllMemberDaoImpl();
+
+
+    public void transfer(HttpServletRequest req, HttpServletResponse resp) throws IOException,SQLException {
+        // 创建支付者账户和收款方账户
+//        Account payer = new BankAccount("Alice", 1000.0);
+//        Account payee = new BankAccount("Bob", 0.0);
+
+        //设置字符编码
+        req.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html;charset=utf-8");
+
+        HttpSession session = req.getSession();
+        String userId = (String) session.getAttribute("userId");
+
+        //获取html传来的信息groupName
+        String groupIdSender = req.getParameter("groupIdSender");
+        String groupIdReceiver = req.getParameter("groupIdReceiver");
+        String description = req.getParameter("description");
+        String amountString = req.getParameter("amount");
+        double amount = Double.parseDouble(amountString);
+
+        //获得groupReceive的creator//******************************这里开始往下
+        String groupCreatorIDReceive = allMemberDao.getCreatorId(groupIdReceiver);//这里写的比较屎，把dao的东西拿过来用
+        if (groupCreatorIDReceive.equals(null)){
+            //这里要改为能反馈的
+            System.out.println("找不到这个群，请输入正确的群号id");
+
+        }else {
+            //得到两个人的ALLMemberVO,用public Result getAllMemberDetails(String groupId,String userId)throws SQLException这个
+            Result result_payUser = allMemberService.getAllMemberDetails(groupIdSender,userId);
+            Result result_receiveUser = allMemberService.getAllMemberDetails(groupIdReceiver,groupCreatorIDReceive);
+
+            AllMemberVO payerVO= (AllMemberVO)result_payUser.getData();
+            AllMemberVO payeeVO= (AllMemberVO)result_payUser.getData();
+
+            //封装两个对象能够给双重验证用
+            AccountVO payer = new AccountVO(groupIdSender,payerVO.getBalance());
+            AccountVO payee = new AccountVO(groupIdReceiver,payeeVO.getBalance());
+
+            // 执行资金交易
+            boolean success = transactionService.transfer(payer, payee, 500.0);
+            if (!success) {
+                System.out.println("交易失败，资金已退回到支付者账户。");
+            }
+            // 打印账户余额
+            System.out.println("支付者账户余额：" + payer.getBalance());
+            System.out.println("收款方账户余额：" + payee.getBalance());
+        }
+
+    }
+
+
+
+
+
+
 
 
     //这个函数根据数据的来源，不用调用自己的数据库表，所以在这一层进行数据的封装
