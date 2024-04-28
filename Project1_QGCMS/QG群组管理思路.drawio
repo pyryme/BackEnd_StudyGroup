@@ -1,0 +1,488 @@
+<mxfile host="Electron" modified="2024-04-28T09:48:11.844Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.1.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="UGOh1upFb7DhazuE-D1m" version="24.1.0" type="device">
+  <diagram name="第 1 页" id="NUq4SrGGLd8RRuyOiOvq">
+    <mxGraphModel dx="24146" dy="14758" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="zHDodIQWFD-MH4O8TR3--3" target="H-t5u0LzTkVtOJ7CLk32-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3770" y="-420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zHDodIQWFD-MH4O8TR3--3" value="功能：&lt;br&gt;群组中心：&lt;div&gt;1.&lt;br&gt;groups表&lt;br&gt;创建群组：创建的信息包括group_id,group_size,group_scale,&lt;br&gt;direction,is_public,&lt;br&gt;系统从前端获得username,然后用这个username填写group_creator_name,&lt;br&gt;group_managers_name,（this.user来填写）&lt;br&gt;group_member_name这个先为&quot;&quot;&lt;br&gt;&lt;br&gt;&lt;br&gt;users表&lt;br&gt;用另一个axios申请到in_group_id;&lt;br&gt;更新create_group信息&lt;br&gt;&lt;br&gt;allgroupmemeber&lt;br&gt;axios传到数据库，&lt;br&gt;然后id，name,member_id， _name&lt;br&gt;ismanager为否，iscreator为是&lt;br&gt;balance初始为0&lt;br&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5260" y="-1340" width="420" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="zHDodIQWFD-MH4O8TR3--5" target="H-t5u0LzTkVtOJ7CLk32-9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="7730" y="-435" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zHDodIQWFD-MH4O8TR3--5" value="群组中心：&lt;br&gt;2.展示群组&lt;br&gt;判断is_public&lt;br&gt;然后把可公开的都读取，内容选择(group_id,group_name,group_size,group_scale,direction&lt;br&gt;group_creator_name&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5170" y="-910" width="500" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="zHDodIQWFD-MH4O8TR3--6" target="H-t5u0LzTkVtOJ7CLk32-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zHDodIQWFD-MH4O8TR3--6" value="3.&lt;br&gt;查找群组&lt;br&gt;根据用户输入的group_id来去Groups库看看有没有这个数据，如果有的话再读取这个数据是否is_public&lt;br&gt;如果is_public则返回数据，返回这条数据，点进去可以加入&lt;br&gt;如果不公开就不返回这条数据，&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="3640" y="-781" width="560" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="zHDodIQWFD-MH4O8TR3--7" target="H-t5u0LzTkVtOJ7CLk32-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zHDodIQWFD-MH4O8TR3--7" value="4.&lt;div&gt;加入群组&lt;br&gt;点入数据之后进入到专属的详细页，最下面有一个加入，点击就可以加入&lt;br&gt;groups表&lt;br&gt;size+1，memeber_id加入数据&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;user表&lt;br&gt;in_group_name加入数据&lt;br&gt;&lt;br&gt;allgroupmemeber加入数据（全部）&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5080" y="-510" width="410" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="zHDodIQWFD-MH4O8TR3--8" target="1RrjfYRCKqjo4PlX4ka2-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zHDodIQWFD-MH4O8TR3--8" value="5.&lt;br&gt;用户查看自己的群组&lt;br&gt;展示我加入的&lt;br&gt;user表：&lt;br&gt;把in_group_name写出来（还有另一个方法，从all表拿取数据）&lt;br&gt;&lt;br&gt;&lt;br&gt;把create_group写出来&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="6091" y="1153" width="360" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="zHDodIQWFD-MH4O8TR3--9" target="1RrjfYRCKqjo4PlX4ka2-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zHDodIQWFD-MH4O8TR3--9" value="6.&lt;br&gt;拉人进群组&lt;br&gt;点击搜索然后发送axios 给users用id看看数据库有没有这个人&lt;br&gt;如果有再看看这个user的ingroup里面有没有他，&lt;br&gt;有人+群里没有他才进行加人的操作。就执行4的行为&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5726" y="1310" width="350" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="zHDodIQWFD-MH4O8TR3--10" target="H-t5u0LzTkVtOJ7CLk32-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="zHDodIQWFD-MH4O8TR3--10" target="1RrjfYRCKqjo4PlX4ka2-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zHDodIQWFD-MH4O8TR3--10" value="7.&lt;br&gt;退出群组&lt;br&gt;点击退出群组，&lt;br&gt;普通成员就&lt;br&gt;groups表&lt;br&gt;size-1，判断这个人再manager还是member表&lt;br&gt;之后就执行manager的退出操作&lt;br&gt;或者member的退出操作&lt;br&gt;users表&lt;br&gt;in_group_name去掉&lt;br&gt;all表&lt;br&gt;先把这个balance和group_id保留传出去&lt;br&gt;用用户id和这个群组的id找到这个人把这个人去掉，&lt;br&gt;再把这个人的ballance分给group_id中的creator&lt;br&gt;&lt;br&gt;creator就&lt;br&gt;先看看这个群组有没有人（用axios看groups表的mamagers_name 和member_name的表，展示数据&lt;br&gt;），还有人的话就选择人作为新的creator&lt;br&gt;groups表&lt;br&gt;size-1，group_creator_id变为这个选中的，&lt;br&gt;group_managers或者member去掉（这里判断），&lt;div&gt;然后减去这个人的id&lt;br&gt;user表：&lt;br&gt;退出者：create_group去掉&lt;br&gt;新的老板：in_group去掉，create新增这个人&lt;br&gt;&lt;/div&gt;&lt;div&gt;all表：&lt;br&gt;&lt;/div&gt;&lt;div&gt;把这个ballance保留传出去，&lt;br&gt;然后把这个去掉，&lt;br&gt;之后把ballance给新的creator&lt;br&gt;&lt;br&gt;manager就&lt;br&gt;group表&lt;br&gt;size-1，manager去掉&lt;br&gt;然后减去这个人的id&lt;br&gt;user表：&lt;br&gt;in_group去掉这个公司&lt;br&gt;all表&lt;br&gt;把这个ballance保留川汇区，&lt;br&gt;然后把这个去掉&lt;br&gt;把Ballance给新的老板&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="4970" y="-280" width="550" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="zHDodIQWFD-MH4O8TR3--15" value="这个太复杂了，&lt;div&gt;或者就把原子化搞小一点，然后全是引用函数&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="4870" y="87" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="zHDodIQWFD-MH4O8TR3--16" target="1RrjfYRCKqjo4PlX4ka2-31" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zHDodIQWFD-MH4O8TR3--16" value="8.充值给自己&lt;br&gt;自己没有群组的就没有钱包&lt;div&gt;作为creator&lt;br&gt;在群组页面的详细页有点击充值的地方，点入可以充钱&lt;br&gt;all表&lt;br&gt;单纯的把balance改变了&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="6072" y="2140" width="310" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="5vppP23f7L8zMcaUpjGX-1" target="1RrjfYRCKqjo4PlX4ka2-35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5vppP23f7L8zMcaUpjGX-1" value="9.把自己的钱给管理的人员&lt;div&gt;all表&lt;br&gt;&lt;/div&gt;&lt;div&gt;点击这个分钱之后，这个群组的manager都出来&lt;br&gt;点击manager&lt;br&gt;就可以将自己的资金转到那里，判断自己的资金是否足够，&lt;br&gt;足够的话，自己的减少少，他的balance多&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="6072" y="2420" width="340" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="5vppP23f7L8zMcaUpjGX-2" value="10.收回&lt;br&gt;all表，和上面的差不多" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="6160" y="2302.5" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="5vppP23f7L8zMcaUpjGX-3" target="1RrjfYRCKqjo4PlX4ka2-41" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5vppP23f7L8zMcaUpjGX-3" value="11.设置增加manager&lt;div&gt;只有creator有这个权限&lt;/div&gt;&lt;div&gt;users表&lt;br&gt;不用&lt;br&gt;groups表&lt;br&gt;group_managers_id表发生变化&lt;br&gt;all表&lt;br&gt;ismanager发生变化&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="6506" y="1500" width="190" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="5vppP23f7L8zMcaUpjGX-4" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;12.设置减少manager&lt;/span&gt;&lt;div style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;只有creator有这个权限&lt;/div&gt;&lt;div style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;users表&lt;br&gt;不用&lt;br&gt;groups表&lt;br&gt;group_managers_id表发生变化&lt;br&gt;all表&lt;br&gt;ismanager发生变化，&lt;br&gt;balance的东西给回creator&lt;/div&gt;&lt;div style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6516" y="1730" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="5vppP23f7L8zMcaUpjGX-5" target="1RrjfYRCKqjo4PlX4ka2-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5vppP23f7L8zMcaUpjGX-5" value="6.2&lt;br&gt;把人提出群组&lt;br&gt;点击这个群组的详细页面有这个按钮&lt;br&gt;&lt;div&gt;简单一点，先检查操作者是不是creator，&lt;br&gt;输入id进行踢人，&lt;/div&gt;&lt;div&gt;先检测这个人是不是在 群里&lt;br&gt;然后检查这个人是manager还是member&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;manager的话&lt;br&gt;users表&lt;/div&gt;&lt;div&gt;in_group_id删除这个数据&lt;br&gt;groups表&lt;br&gt;size-1，group_managers_id去掉这个人&lt;br&gt;all表&lt;br&gt;把这个人的ballance回传到creator。&lt;/div&gt;&lt;div&gt;然后删掉这个人&lt;/div&gt;&lt;div&gt;&lt;br&gt;member的话&lt;br&gt;user表&lt;/div&gt;&lt;div&gt;in_group_id删掉这个群的数据&lt;/div&gt;&lt;div&gt;groups表&lt;br&gt;size-1，group_member_id剪掉这个人&lt;/div&gt;&lt;div&gt;all表&lt;br&gt;直接把这个人删除了就可以&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5686" y="1500" width="240" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="5vppP23f7L8zMcaUpjGX-6" value="写完上面的东西，然后思考哪个函数可以直接写，最后功能是由函数组成的，不是每一个函数都写一个单独的代码&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="2260" y="-1380" width="620" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="5vppP23f7L8zMcaUpjGX-8" target="7Gvqbz4bGP_DDyVW6wAm-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5vppP23f7L8zMcaUpjGX-8" value="1.展示资金&lt;div&gt;利用getid（users）拿到username，&lt;/div&gt;&lt;div&gt;然后申请all表把自己的每一条信息的余额拿出来&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5140" y="2370" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="H-t5u0LzTkVtOJ7CLk32-2" target="7Gvqbz4bGP_DDyVW6wAm-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-2" value="&lt;div&gt;2.开启支付&lt;/div&gt;支付模式：支付宝 类的直接交易&lt;br&gt;发起支付，检验，有权限并且自己的钱够的人可以&lt;br&gt;输入组群的id进行支付，&lt;br&gt;这个发起支付的人把钱给&lt;br&gt;.。。&lt;br&gt;就是双重验证&lt;br&gt;过程把这些信息都放到transaction中&lt;br&gt;而且要加上时间的记录" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5173" y="2450" width="290" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="H-t5u0LzTkVtOJ7CLk32-4" target="7Gvqbz4bGP_DDyVW6wAm-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-4" value="3.查看订单&lt;div&gt;把自己的id的订单都列出来&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5220" y="2610" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9btDxoNZGlSbS2S80ch7-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="H-t5u0LzTkVtOJ7CLk32-7" target="9btDxoNZGlSbS2S80ch7-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-7" value="这个是提交，就整块写提交的东西：&lt;br&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;函数1：&lt;br&gt;groups表&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;group_id,group_name,group_size,group_scale,&lt;/span&gt;&lt;br style=&quot;text-wrap: nowrap;&quot;&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;direction,is_public,group_crator_name,&lt;/span&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;函数2：&lt;br&gt;user表&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;用另一个axios申请到in_group_id;&lt;/span&gt;&lt;br style=&quot;text-wrap: nowrap;&quot;&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;更新create_group信息&lt;/span&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;allgroupmemeber&lt;/span&gt;&lt;br style=&quot;text-wrap: nowrap;&quot;&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;函数3&lt;br&gt;axios传到数据库，&lt;/span&gt;&lt;br style=&quot;text-wrap: nowrap;&quot;&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;然后id，name,member_id， _name&lt;/span&gt;&lt;br style=&quot;text-wrap: nowrap;&quot;&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;ismanager为否，iscreator为是&lt;/span&gt;&lt;br style=&quot;text-wrap: nowrap;&quot;&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;balance初始为0&lt;/span&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5713" y="-1330" width="490" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="9btDxoNZGlSbS2S80ch7-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="H-t5u0LzTkVtOJ7CLk32-9" target="9btDxoNZGlSbS2S80ch7-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-9" value="函数5：无输入，把groups中的所有username都返回到这个页面的groupid的数组中&lt;div&gt;函数4：输入group_id判断是否Is_public&lt;br&gt;函数6：（##比较整块的）&lt;br&gt;输入group_id，返回&lt;span style=&quot;text-wrap: nowrap; background-color: initial;&quot;&gt;group_id,group_name,group_size,group_scale,direction&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;group_creator_name&lt;/span&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5713" y="-942.5" width="280" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-10" value="函数7：&lt;br&gt;输入groupid判断数据库是否有这个数据&lt;div&gt;（&lt;span style=&quot;background-color: initial;&quot;&gt;函数4：输入group_id判断是否Is_public&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;）&lt;br&gt;（&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;函数6：（##比较整块的）&lt;/span&gt;&lt;/div&gt;&lt;div&gt;输入group_id，返回&lt;span style=&quot;text-wrap: nowrap; background-color: initial;&quot;&gt;group_id,group_name,group_size,group_scale,direction&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-wrap: nowrap; background-color: initial;&quot;&gt;group_creator_name&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;）&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="4500" y="-809" width="300" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="IuYvCM7X7xOVFosO63ge-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="H-t5u0LzTkVtOJ7CLk32-12" target="IuYvCM7X7xOVFosO63ge-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-12" value="函数8：输入userid，和groupid&lt;br&gt;在group表进行&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;size+1，memeber_id加入数据的操作&lt;/span&gt;&lt;br style=&quot;text-wrap: nowrap;&quot;&gt;&lt;div&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;函数9：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;输入userid,groupid，&lt;br&gt;在users表进行&lt;/span&gt;&lt;span style=&quot;text-wrap: nowrap; background-color: initial;&quot;&gt;in_group_name加入数据&lt;/span&gt;&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;的操作&lt;div&gt;函数10：&lt;br&gt;输入userid,groupid&lt;br&gt;在&lt;span style=&quot;text-wrap: nowrap; background-color: initial;&quot;&gt;allgroupmemeber加入数据（全部）&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5540" y="-520" width="420" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="H-t5u0LzTkVtOJ7CLk32-15" target="gKFfwpDROmzLkyQQ0qld-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-15" value="函数12：输入userid和groupid&lt;br&gt;返回这个人是creator还是manager还是member&lt;br&gt;函数11：&lt;div&gt;输入userid,groupid&lt;br&gt;就能在group表进行size-1，&lt;br&gt;函数13：&lt;/div&gt;&lt;div&gt;输入userid，groupid&lt;br&gt;就能在all表返回balance值&lt;/div&gt;&lt;div&gt;去掉这个人。&lt;/div&gt;&lt;div&gt;函数14：&lt;br&gt;判断这个群组的人数，即输入userid,输出groupsize.&lt;/div&gt;&lt;div&gt;函数15：&lt;/div&gt;&lt;div&gt;输入身份：creator，manager，member 和 输入group_id判断&lt;br&gt;&lt;br&gt;从creator重新开始&lt;/div&gt;&lt;div&gt;函数16：我点击这个退出按钮执行的行为中的&lt;br&gt;操作：输入userid,groupid锁定到这个人，后all表&lt;br&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5730" y="-235" width="750" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.002;entryY=0.621;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="H-t5u0LzTkVtOJ7CLk32-17" target="H-t5u0LzTkVtOJ7CLk32-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3765" y="-1615" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-17" value="临时的想法：&lt;div&gt;1&lt;/div&gt;&lt;div&gt;.看看user表的In_group_id有什么用&lt;/div&gt;&lt;div&gt;2.看看user表的create_group表有什么用&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="3365" y="-1650" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="H-t5u0LzTkVtOJ7CLk32-19" value="没有什么用，all能够执行这个功能&lt;br&gt;所以前面写的（ 前12）那些函数如果有这个记录信息或者读取信息的可以改成all表的行为" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="3775" y="-1645" width="170" height="97" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1RrjfYRCKqjo4PlX4ka2-3" target="1RrjfYRCKqjo4PlX4ka2-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-3" value="好像可以查询的时候是全部东西都一起返回，然后从返回值拿自己想要的东西就可以&lt;div&gt;不同的函数和dao的区别只是输入的不同或者操作的不同&lt;br&gt;但是可以写重载&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="3265" y="-1513" width="470" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-4" value="一般都是输入id，所以可以把函数前15个函数有这个错误的改成这种方法" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="3990" y="-1513" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-7" value="group中的creator和member，manager都不用了，&lt;br&gt;size也省了，所以这个群里的处理创建删除就没有什么东西了" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="3205" y="-1415" width="340" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1RrjfYRCKqjo4PlX4ka2-13" target="1RrjfYRCKqjo4PlX4ka2-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1RrjfYRCKqjo4PlX4ka2-13" target="1RrjfYRCKqjo4PlX4ka2-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1RrjfYRCKqjo4PlX4ka2-13" target="1RrjfYRCKqjo4PlX4ka2-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-13" value="&lt;div&gt;（先检测这个人的身份）&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6088.5" y="630" width="365" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-15" value="creator&lt;div&gt;查询(输入groupId&lt;br&gt;输出所有的manager的name)&lt;/div&gt;&lt;div&gt;然后在一个输入框输入对应的name&lt;br&gt;函数16：&lt;br&gt;操作：&lt;br&gt;给userid1,userid2,groupid,进入all表，先把自己的的balance拿出来&lt;br&gt;然后删掉这个数据&lt;br&gt;把balance给符合条件的那个人&lt;br&gt;把那个人的iscreator改为是，ismanager改为否，&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5616" y="780" width="400" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-17" value="manager&lt;div&gt;查询（输入groupid，把creatorid返回出来）&lt;br&gt;执行函数16:略&lt;br&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6143.5" y="770" width="255" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-19" value="上面的东西可以加，可以优化整个系统的运行速度，减少axios的请求，但是这里为了业务性：快速查询出信息，快速写出代码，快速拼凑出新的功能，就这样写了" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="3185" y="-1308" width="880" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-21" value="普通用户双非&lt;br&gt;函数17：&lt;br&gt;删掉自己的信息就可以了" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6636" y="780" width="350" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="UN_vlIrtI7GJsliYMf3u-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1RrjfYRCKqjo4PlX4ka2-24" target="UN_vlIrtI7GJsliYMf3u-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-24" value="查询（旧函数：&lt;div&gt;输入userid，然后拿all表的数据组就可以了）&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6651" y="1193" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UN_vlIrtI7GJsliYMf3u-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1RrjfYRCKqjo4PlX4ka2-26" target="UN_vlIrtI7GJsliYMf3u-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-26" value="没有新的东西" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6121" y="1330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UN_vlIrtI7GJsliYMf3u-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1RrjfYRCKqjo4PlX4ka2-29" target="UN_vlIrtI7GJsliYMf3u-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-29" value="和退群的逻辑差不多，没新东西" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5986" y="1670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UN_vlIrtI7GJsliYMf3u-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1RrjfYRCKqjo4PlX4ka2-31" target="UN_vlIrtI7GJsliYMf3u-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-31" value="函数18：&lt;div&gt;操作&lt;br&gt;输入creatorid groupid和ballance&lt;/div&gt;&lt;div&gt;在all中根据前两个条件找到自己然后改变ballance&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6485" y="2142.5" width="120" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-35" value="函数19：&lt;div&gt;操作&lt;br&gt;输入自己的userid 选择的userid，exbalance可正可负,&lt;/div&gt;&lt;div&gt;查询（双方的balance）&lt;/div&gt;&lt;div&gt;查询通过就执行改变两者的balance量&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6570" y="2397.5" width="210" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-37" value="要加检验这个人是否在群组里的条件&lt;br&gt;看这个信息是哪里来的，如果是数据库返回的就不用判断这个本身的信息了，如果不是数据库来的就要进行判断" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="3125" y="-1205" width="610" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1RrjfYRCKqjo4PlX4ka2-41" value="查询（输入groupid,userid&lt;br&gt;判断这个人是不是creator）&lt;br&gt;查询通过就给出左边manager的name和id&lt;br&gt;右边就给出member的name和id&lt;div&gt;member点击后：&lt;/div&gt;&lt;div&gt;函数19：&lt;br&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;去all表把选中人的数据的ismanager改为相反的&lt;br&gt;manager点击后：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;函数20：&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;去吧all表中选中人的ismanager改为相反的，&lt;br&gt;然后把这个人的全部balance改到自己的balance中&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6815" y="1456.25" width="365" height="217.5" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-1" value="旧东西&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5580" y="2375" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-3" value="函数21：&lt;div&gt;专门写一个双重验证的函数就可以了&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5628" y="2490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-5" value="旧东西，查询而已&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5580" y="2600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-7" value="现在开始改：&lt;div&gt;1.注册的时候生成用户id，然后一起送到数据库里面。但是其他的东西都不要改了，改这个局部就行了，否则又要改很多东西&lt;br&gt;2.把3个的vo，vo有关数据库的接口都写上去，然后写上常用的只用userid或者groupid作为参数去请求全部的信息，把这个从servlet到dao这条路打通&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5895" y="2803" width="810" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="7Gvqbz4bGP_DDyVW6wAm-8" target="7Gvqbz4bGP_DDyVW6wAm-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-8" value="把所有的group的东西都注释掉" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="6090" y="2910" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="7Gvqbz4bGP_DDyVW6wAm-12" target="7Gvqbz4bGP_DDyVW6wAm-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-12" value="&lt;div&gt;改1，这个先不把usersignupVO改了，以后要全取东西用新的UserVO&lt;br&gt;经验：可以直接在SignupDAO改一下,简单的离谱，前面都不要改。&lt;br&gt;以后改代码准备写屎山（不按照格式，可读性差，为了达到目的写的非常规&lt;span style=&quot;background-color: initial;&quot;&gt;逻辑&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;的代码）的时候一层层的推导下去看看哪里能达到效果，影响的代码范围最小&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5685" y="2993" width="850" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-15" value="改完了" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6620" y="2983" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-18" value="改完了" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6425" y="2885" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-20" value="改2，&lt;div&gt;user不改旧的，只写新的&lt;br&gt;group改了&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5855" y="3083" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="7Gvqbz4bGP_DDyVW6wAm-21" target="7Gvqbz4bGP_DDyVW6wAm-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-21" value="有隐藏危险的行为记录&lt;br&gt;（危险在不知道改了这个东西之后会不会导致要改其他的代码&lt;span style=&quot;background-color: initial;&quot;&gt;）&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="6500" y="-1300" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gvqbz4bGP_DDyVW6wAm-22" value="1.把group的数据库的is_public类型改为int类型" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6960" y="-1310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9btDxoNZGlSbS2S80ch7-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="LdzmGvNtUqMZj5j3NV0g-1" target="9btDxoNZGlSbS2S80ch7-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LdzmGvNtUqMZj5j3NV0g-1" value="写完了GroupVO&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;br&gt;所以先写groupcengter中的creategroup，就是《新建群组》，用这个VO&lt;div&gt;写html，&lt;br&gt;vue要有一个userid，要有group_id,name,scale,direction,is_public&lt;br&gt;html部分id自动生成不用表格，ispublic换成选择的&lt;br&gt;下面的有个botton的函数，将这些表格的东西获取存储在本地的数据，然后把这些数据用axios交上去&lt;br&gt;&lt;br&gt;现在写对all表的影响&lt;/div&gt;&lt;div&gt;学一下session，10m&lt;br&gt;现在写一个session，然后在登录成功的时候把session写入userid&lt;/div&gt;&lt;div&gt;（后续的操作也要把groupid存到session2中）&lt;/div&gt;&lt;div&gt;将这个userid和给group表的这些信息就能对all表进行操作了&lt;/div&gt;&lt;div&gt;，然后GroupServlet中进行allservice的操作（现在把session里面塞UserName,方便后面的操作）&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5880" y="3340" width="550" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="in8i8V3XaAjBgC2Grcyd-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="eJbfiPjZlu1VU0zfzpFx-1" target="in8i8V3XaAjBgC2Grcyd-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eJbfiPjZlu1VU0zfzpFx-1" value="现在的问题是传输信息的过程有问题，导致去数据库的数据groupname是null，排一下错" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5770" y="3260" width="490" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="in8i8V3XaAjBgC2Grcyd-4" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6420" y="3235" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="in8i8V3XaAjBgC2Grcyd-6" value="现在整个链子就差获取groupId了，在GroupServlet中开始" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="5985" y="3570" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9btDxoNZGlSbS2S80ch7-1" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6680" y="3400" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9btDxoNZGlSbS2S80ch7-3" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6350" y="-1220" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9btDxoNZGlSbS2S80ch7-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="9btDxoNZGlSbS2S80ch7-5" target="9btDxoNZGlSbS2S80ch7-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9btDxoNZGlSbS2S80ch7-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="9btDxoNZGlSbS2S80ch7-5" target="9btDxoNZGlSbS2S80ch7-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9btDxoNZGlSbS2S80ch7-5" value="从前端开始：&lt;div&gt;html从reqs拿数组groupname，还要配上网址，能够点击这个群展示到详细页，--&amp;gt;写详细页,用session来进行信息的传递，（后面点击其他的就用新的session覆盖）&lt;/div&gt;&lt;div&gt;详细页就点击这个名字，然后getGroupMessage拿单个group的数据&lt;/div&gt;&lt;div&gt;GroupServlet有3个新的函数:&lt;/div&gt;&lt;div&gt;getAllPublicGroup（输入自己的userid配上public，去找all表拿返回全部group_name（String）数组，不包含自己在内的public的组）,&lt;br&gt;getCreatedGroup（输入自己的userid配上iscreator，去找all表返回全部的grou_name（string）数组，&lt;span style=&quot;background-color: initial;&quot;&gt;，自己所有创造的组），&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;getJoinGroup(输入自己的Userid配上iscreator，去all表返回全部的group_name（string）数组，，有自己的id的组但是排除自己create的),.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;这个展示的页面就完了&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6140" y="-947.5" width="1000" height="185" as="geometry" />
+        </mxCell>
+        <mxCell id="9btDxoNZGlSbS2S80ch7-7" value="1.要学习返回数组怎么进行vue的多个展示，同时能点进去&lt;div&gt;看看方的&lt;br&gt;和我的不一样，我问问GPT&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="7180" y="-1260" width="490" height="255" as="geometry" />
+        </mxCell>
+        <mxCell id="IuYvCM7X7xOVFosO63ge-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="9btDxoNZGlSbS2S80ch7-10" target="IuYvCM7X7xOVFosO63ge-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9btDxoNZGlSbS2S80ch7-10" value="3.想想怎么解决getUnJoinGroup&lt;br&gt;有两种思想，从all数据库拿到全部的groupName,然后拿着这个数组 和 groups表的is_public的数组取相同的部分（wc，我太聪明了）&lt;br&gt;所以在groupServlet中加多一个groupservice来进行获取后者。&lt;div&gt;最后在groupservlet中的函数里面进行重叠操作&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="7250" y="-800" width="770" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IuYvCM7X7xOVFosO63ge-1" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="8200" y="-810" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IuYvCM7X7xOVFosO63ge-3" value="先不做的" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="4103" y="-920" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="IuYvCM7X7xOVFosO63ge-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="IuYvCM7X7xOVFosO63ge-4" target="IuYvCM7X7xOVFosO63ge-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IuYvCM7X7xOVFosO63ge-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="IuYvCM7X7xOVFosO63ge-4" target="IuYvCM7X7xOVFosO63ge-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IuYvCM7X7xOVFosO63ge-4" value="写详细页，&lt;br&gt;从第一页可以得到携带的groupName的这个参数，&lt;br&gt;把这个新的参数送到servlet，servlet把groupid拿到之后申请全部的信息，&lt;div&gt;然后给前端展示&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;点击加入，从usersession拿userid和name，去all表看看有没有数据，没有就写入all表，&lt;/div&gt;&lt;div&gt;参数是userid,groupid,userName,groupName,最后dao的时候iscreator为0，ismanager为0，balance为0.0&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6000" y="-510" width="560" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="IuYvCM7X7xOVFosO63ge-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="IuYvCM7X7xOVFosO63ge-6" target="IuYvCM7X7xOVFosO63ge-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IuYvCM7X7xOVFosO63ge-6" value="现在的问题就是后端的数据怎么转换格式到前端。&lt;div&gt;看看gpt怎么处理&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6890" y="-560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IuYvCM7X7xOVFosO63ge-8" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="7120" y="-570" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="IuYvCM7X7xOVFosO63ge-10" target="gKFfwpDROmzLkyQQ0qld-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IuYvCM7X7xOVFosO63ge-10" value="现在有新问题，展示未加入群组的逻辑&lt;br&gt;在数据库拿数据的时候或者重叠的时候进行改进&lt;div&gt;先看数据库拿数据的时候&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;一个是ispublic,&lt;/div&gt;&lt;div&gt;另一个是没有自己名字的群组，看看这个先，能不能&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6860" y="-350" width="460" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-1" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="7420" y="-325" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="gKFfwpDROmzLkyQQ0qld-5" target="gKFfwpDROmzLkyQQ0qld-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="gKFfwpDROmzLkyQQ0qld-5" target="gKFfwpDROmzLkyQQ0qld-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-5" value="1.先把加入群组和未加入群组的html模仿写一下，虽然看起来一样但是还是分开写，因为后面的退出逻辑不一样（发现了这个可以用前面的getGroupDetail的整个servlet到dao的函数）" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6595" y="-15" width="545" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="gKFfwpDROmzLkyQQ0qld-7" target="gKFfwpDROmzLkyQQ0qld-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="gKFfwpDROmzLkyQQ0qld-7" target="gKFfwpDROmzLkyQQ0qld-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="gKFfwpDROmzLkyQQ0qld-7" target="gKFfwpDROmzLkyQQ0qld-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-7" value="现在要验证自己是否是manager,要展示出来，（资金的其他页面再来）&lt;div&gt;这里要用到isManager函数，输入userid,groupid,&lt;/div&gt;&lt;div&gt;就能拿出allmemberVO的所有信息。&lt;/div&gt;&lt;div&gt;从头开始改&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;br&gt;现在写退出逻辑，先写加入的组&lt;div&gt;判断这个人是不是manager，member（前面已经有这个功能了）&lt;br&gt;memberr要输入userid groupid，去all表进行删除&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;在html中用同一个函数，在servlet进行ismanager判断，然后走不同的service dao方法&lt;/div&gt;&lt;div&gt;所以html要输入groupid,(userid),ismanager,balance,&lt;br&gt;&lt;br&gt;&lt;br&gt;manager要输入userid,groupid&lt;br&gt;要getCreator，然后把自己的balance给creator，变为0&lt;br&gt;&lt;br&gt;更具service和dao为一体的原则，首先html点击退出到同一个servlet，然后serclet进行判断，进入到qutiGroupManager,quGroupMember两个不同的service层函数中&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="7432.5" y="-150" width="717.5" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-9" value="member" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="8340" y="-60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UN_vlIrtI7GJsliYMf3u-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="gKFfwpDROmzLkyQQ0qld-11" target="UN_vlIrtI7GJsliYMf3u-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-11" value="退出逻辑，creator的逻辑" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="7443" y="190" width="477" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-15" value="好像是多个异步请求的问题" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="8280" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gKFfwpDROmzLkyQQ0qld-18" value="现在有bug，看看25m能不能搞完&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="8070" y="-380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UN_vlIrtI7GJsliYMf3u-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="UN_vlIrtI7GJsliYMf3u-1" target="UN_vlIrtI7GJsliYMf3u-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UN_vlIrtI7GJsliYMf3u-1" value="先不写这个功能" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="8070" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UN_vlIrtI7GJsliYMf3u-3" value="" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="8290" y="180" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="UN_vlIrtI7GJsliYMf3u-6" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6881" y="1183" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="varJU6io7wL3w9yJdIsn-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="UN_vlIrtI7GJsliYMf3u-8" target="varJU6io7wL3w9yJdIsn-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UN_vlIrtI7GJsliYMf3u-8" value="在manager和member 与 creator 下面放一个输入框，加一个按钮。&lt;div&gt;输入框存放userid，并且携带着这个groupid一起到servlet&lt;br&gt;servlet就传下去 先去user表先看有没有这个人&lt;/div&gt;&lt;div&gt;再去all表看看这个人有没有已经加入过了&lt;br&gt;没有最后就去all表加入即可&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6281" y="1315" width="480" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="UN_vlIrtI7GJsliYMf3u-10" value="这个先不用做" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6186" y="1670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UN_vlIrtI7GJsliYMf3u-12" value="输入userid和groupid和iscreator就能充钱了，去all表操作" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6740" y="2165" width="395" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="varJU6io7wL3w9yJdIsn-1" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="7051" y="1320" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="varJU6io7wL3w9yJdIsn-3" value="资金模块：&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="7280" y="2260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-1" value="资金中心的页面设计" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5470" y="4020" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5408" y="4090" width="334" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-3" value="页面中心" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="5553" y="4110" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-4" value="我的资金" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="5439" y="4172.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-5" value="我创建的群组&lt;br&gt;单条：群id和群名，balance，&lt;br&gt;多条：所有成员的id，name，ismanager，balance" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5395" y="4202.5" width="340" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-7" value="我加入的群组&lt;br&gt;单条：群名和群名&lt;br&gt;多条：所有成员的id，name，ismanager（creator），balance" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5407" y="4272.5" width="352" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="tugq2nM8TDLDx8wpjw8_-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="5920" y="4320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-8" value="进行转账" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5420.5" y="4122.5" width="69.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="tugq2nM8TDLDx8wpjw8_-9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="5644.705882352941" y="4700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-9" value="查看我的转账记录" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5600" y="4140" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-11" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5860" y="4330" width="570" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-12" value="输入转账的groupid（你在内的）" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5870" y="4380" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-13" value="生成订单" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6080" y="4330" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-14" value="输入转账的对象的groupId和manager creatorId（你虽然可以在内，但是收款人不能是自己）" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5870" y="4430" width="550" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-15" value="转账金额（单笔限制10万）" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5870" y="4480" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-16" value="提交" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6075" y="4570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-17" value="转账说明" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5870" y="4530" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-19" value="从transaction表中拿数据就可以了，右边留一个按钮，点击可以发送申请报销，（但是自己退群的无法报销）" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="5512.5" y="4700" width="265" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-20" value="现在先写展示的页面，用groupcenter可以作为模板&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;现在写“我创建的群组”的逻辑&lt;br&gt;能拿到的只有自己的userId,然后调用之前展示全部我创建的组的groupName不重复的。&lt;br&gt;在servlet拿这两个数据去all表进行拿前3个数据&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;然后用groupId去all表拿“ “AllMemberTSTVO类” ”的数据&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="4780" y="4132.5" width="560" height="267.5" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-21" value="今晚不用担心什么写不完，一直写就能保证激素性学习正常&lt;div&gt;熬夜完成功能就是了，去厕所蚊子少，然后写到没电了。&lt;div&gt;熬一天夜没有什么关系的，直到实在没有效率了就睡觉。第二天一般会比较反常的亢奋的，起床继续完善项目&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="4780" y="3950" width="590" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tugq2nM8TDLDx8wpjw8_-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.998;entryY=0.341;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="tugq2nM8TDLDx8wpjw8_-5" target="tugq2nM8TDLDx8wpjw8_-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UfeA03V2XZbbUfNmQLTC-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="UfeA03V2XZbbUfNmQLTC-1" target="UfeA03V2XZbbUfNmQLTC-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UfeA03V2XZbbUfNmQLTC-1" value="先写生成订单的页面&lt;br&gt;&lt;br&gt;现在写逻辑&lt;br&gt;页面上已经获取pay_group_id,&lt;br&gt;receive_group_id,amount,description&lt;br&gt;自己生成transaction_id,从session获得userId,getname得到userName，pay_group_name，receice_group_name,&lt;br&gt;然后从这个请求开始发起的时候就生成created_time,&lt;br&gt;status单独写函数，然后随着双重检验的时候进行更新，最后成功交易的时候就更新status&lt;br&gt;&lt;br&gt;在servlet中写双重检验的东西" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6580" y="4330" width="660" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="UfeA03V2XZbbUfNmQLTC-2" value="拆分步骤：&lt;div&gt;1.先把伪代码写出来,&lt;br&gt;2.看看双重检验的逻辑&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="7310" y="4440" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YDGKbpwK3oFMqzVcKOxw-1" value="机制是这样的，钱直接给creator&lt;br&gt;&lt;br&gt;获得userid，用groupname获的creator。&lt;br&gt;servlet还要getCreatorId(用id去查2个人的AllmemberVO的信息就好了)，&lt;br&gt;然后把balance和userid传入service，&lt;br&gt;把service的钱检测改为dao里面的查询。" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6750" y="4670" width="460" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ttKuXjg3Sa54ExOawY32-1" value="防止的：一个人开两个页面，同时给钱，成交了两笔。网络问题导致总钱变少了或者变多了&lt;br&gt;写一个思路就行，代码先不用写了（因为这个检验还有技术没有学：锁住这个数据库）（要想学多的话，技术应该学习最先进，学造好的轮子，不要自己想着造轮子）&lt;br&gt;1.先检验支付者的钱够不够，够的话就继续下一步，顺便给status定为“支付开始发起，支付者的钱够”&lt;br&gt;2.开始给支付者的数据库扣钱，以改变的行数作为判断，如果没有改变则进行停止，status为“支付者扣钱异常，停止交易，支付者可以检查后申诉确实扣钱了”&lt;br&gt;如果正常的话下一步，status为“支付者的钱已经扣除”&lt;br&gt;3.给收款者钱，看看数据库是否发生变化，没有则持续10s进行周期为0.5秒的检测，再检查是否收到钱，10s过了就停止交易，把钱还回去，然后status标记上“收款者收款异常，钱已退回”" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="6500" y="4990" width="1030" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="Yzd-ZshZ6RgWllmsqZhd-1" value="&lt;font style=&quot;font-size: 72px;&quot;&gt;思考过程&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="4110" y="-2180" width="1250" height="450" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
